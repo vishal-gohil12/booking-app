@@ -26,6 +26,7 @@ The Tour Package Management System is a web application built with Next.js that 
 2. **Install Dependencies:**
   ```bash
     yarn
+   ```
 
 3. **Configure Environment Variables: Create a .env.local file in the root folder with the following:**
   ```bash
@@ -33,10 +34,12 @@ The Tour Package Management System is a web application built with Next.js that 
     API_KEY=""
     API_SECRET=""
     CLOUD_NAME=""
+  ```
 
 4. **Run the Application:**
    ```bash
     yarn dev
+   ```
 
 ## Implemented Features
 - Admin Panel:

@@ -20,7 +20,7 @@ export default function AdminPanel() {
     if (images) formData.append("images", images);
 
     try {
-      const res = await axios.post("/api/admin/packages", formData);
+      await axios.post("/api/admin/packages", formData);
       setMessage("Package created successfully!");
       setTitle("");
       setDescription("");

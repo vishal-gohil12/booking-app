@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
+import Image from "next/image";
 import BookingForm from "./BookingForm";
 
 export type Packages = {
@@ -16,7 +17,7 @@ export default function PackageCart() {
   const [packages, setPackages] = useState<Packages[]>([]);
   const [filteredPackages, setFilteredPackages] = useState<Packages[]>([]);
   const [showBooking, setShowBooking] = useState(false);
-  const [selectedPackage, setSelectedPackage] = useState<Packages | any>();
+  const [selectedPackage, setSelectedPackage] = useState<Packages | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [priceRange, setPriceRange] = useState<number | "">("");
 
@@ -87,9 +88,11 @@ export default function PackageCart() {
               key={index}
               className="border rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
-              <img
+              <Image
                 src={pkg.images || "/placeholder.jpg"}
                 alt={pkg.title}
+                width={500}
+                height={300}
                 className="w-full h-56 object-cover"
               />
               <div className="p-6">
@@ -123,7 +126,7 @@ export default function PackageCart() {
       )}
 
       <div className="absolute top-20 w-full">
-        {showBooking && (
+        {showBooking && selectedPackage && (
           <BookingForm
             packageDetails={selectedPackage}
             setShowBooking={setShowBooking}

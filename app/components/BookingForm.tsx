@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Packages } from "./PackageCart";
 import axios from "axios";
 import jsPDF from "jspdf";
@@ -11,6 +11,15 @@ type Booking = {
   travelers: number;
   specialRequest?: string;
 };
+
+interface Invoice {
+  user: {
+    name: string;
+  };
+  travelers: number;
+  specialRequest?: string;
+  createdAt?: string;
+}
 
 export default function BookingForm({
   packageDetails,
@@ -64,7 +73,7 @@ export default function BookingForm({
     }
   };
 
-  function generateInvoicePDF(invoice: any) {
+  function generateInvoicePDF(invoice: Invoice) {
     console.log("Invoice ", invoice);
     const doc = new jsPDF();
     doc.setFontSize(18);

@@ -64,20 +64,20 @@ The Tour Package Management System is a web application built with Next.js that 
 │   ├── admin
 │   │   └── route.ts
 │   ├── booking
-    │    └── route.ts
+│   │   └── route.ts
 │   ├── packages
-    │   └── route.ts
-    └── invoice
-        └── route.ts
+│   │   └── route.ts
+│   └── invoice
+│       └── route.ts
 │
 ├── admin
 │   └── page.tsx
 │
 ├── lib
-│   └── db.js
-    └──Invoice.ts
-    └──TourePackage.ts
-    └──User.ts
+│   ├── db.js
+│   ├── Invoice.ts
+│   ├── TourePackage.ts
+│   └── User.ts
 │
 ├── favicon.ico
 ├── globals.css

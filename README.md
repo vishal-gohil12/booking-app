@@ -53,6 +53,7 @@ The Tour Package Management System is a web application built with Next.js that 
 - Book packages through a seamless form.
 
 ## project structure
+```
 /app
 │
 ├── components
@@ -83,3 +84,4 @@ The Tour Package Management System is a web application built with Next.js that 
 ├── globals.css
 ├── layout.tsx
 └── page.tsx
+```

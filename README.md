@@ -51,3 +51,35 @@ The Tour Package Management System is a web application built with Next.js that 
 - Filter packages by price and destination.
 - View detailed package information.
 - Book packages through a seamless form.
+
+## project structure
+/app
+│
+├── components
+│   ├── Navbar.tsx
+│   ├── BookingForm.tsx
+│   └── PackageCart.tsx
+│
+├── api
+│   ├── admin
+│   │   └── route.ts
+│   ├── booking
+    │    └── route.ts
+│   ├── packages
+    │   └── route.ts
+    └── invoice
+        └── route.ts
+│
+├── admin
+│   └── page.tsx
+│
+├── lib
+│   └── db.js
+    └──Invoice.ts
+    └──TourePackage.ts
+    └──User.ts
+│
+├── favicon.ico
+├── globals.css
+├── layout.tsx
+└── page.tsx

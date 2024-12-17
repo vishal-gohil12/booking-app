@@ -12,13 +12,6 @@ type Booking = {
   specialRequest?: string;
 };
 
-type Invoice = {
-  user: Booking;
-  tour_id: string;
-  traveler: number;
-  specialRequest?: string;
-};
-
 export default function BookingForm({
   packageDetails,
   setShowBooking,
@@ -63,6 +56,7 @@ export default function BookingForm({
         specialRequest: formData.specialRequest,
       };
       const invoiceRes = await axios.post("/api/invoice", invoiceData);
+      console.log(invoiceRes);
       generateInvoicePDF(invoiceData);
     } catch (error) {
       console.error("Error submitting form:", error);

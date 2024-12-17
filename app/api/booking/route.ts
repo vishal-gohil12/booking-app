@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
 
     await newUser.save();
     return NextResponse.json({ message: 'User Successfully Booked The Tour',  user: newUser }, { status: 201 });
-   } catch(e) {
+   } catch {
     return NextResponse.json({
         Error: "Error while "
     }, { status: 500 });

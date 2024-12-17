@@ -6,7 +6,7 @@ export async function GET() {
     try {
         const allPackage = await Packages.find();
         return NextResponse.json(allPackage);
-    } catch(e) {
+    } catch {
         return NextResponse.json({
             Error: "Error while retriving data"
         }, { status: 500 });

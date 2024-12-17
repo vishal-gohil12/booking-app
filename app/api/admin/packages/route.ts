@@ -11,7 +11,7 @@ cloudinary.config({
 interface CloudinaryUpload {
     public_id: string;
     secure_url: string;
-    [key: string]: any;
+    [key: string]: unknown;
 }
 
 export async function POST(req: NextRequest) {
@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({
             data: savedPackage,
         });
-    } catch (e) {
+    } catch {
         return NextResponse.json({
             Error: "Error while posting data"
         }, { status: 500 });

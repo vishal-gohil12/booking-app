@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
         await invoice.save();
     
         return NextResponse.json({ message: "Invoice generated", invoice }, { status: 201 });
-    } catch(e) {
+    } catch {
         return NextResponse.json({
             Error: "Error while generating  data"
         }, { status: 500 });
